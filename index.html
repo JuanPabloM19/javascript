@@ -9,7 +9,7 @@
     <title>Entrega 1 Javascript</title>
 </head>
 <body>
-    <h1>Bienvenido a la Entrega 1 de Juan Pablo Munizaga</h1>
+    <!-- <h1>Bienvenido a la Entrega 1 de Juan Pablo Munizaga</h1>
     <p>Vamos a tener 2 scripts. El primero sera un input para escribir una fecha y el segundo un marcaje de checkboox que esta limitado y puede ser configurado. En este caso solo se pueden marcar 3 por fila.</p>
     
     <p>Script 1:</p>
@@ -31,7 +31,20 @@
         <td width='20' valign='top'><input type='checkbox' onclick='validar(formulario.checkbox10,1)' name='checkbox10' value='checkbox10'></td>
         </tr>
         </table>
+        </form> -->
+
+        <h1>Bienvenido a la Entrega 2 de Juan Pablo Munizaga</h1>
+        <p class="separar">Vamos a tener 2 scripts. <br> El primero es un array de nombres aleatorios y mostrarlos. <br> El segundo script es mostrar en pantalla los refranes contenidos en un array de 2 segundos con la funcion SetInterval.</p>
+
+        <form>
+            <input id="nombre" type="text" placeholder="Insertar Nombre"/>
+            <button class="sep btn-style" onclick="insertarNombre(event)">Insertar</button> 
         </form>
+        <div>
+            <ul id="lista-nombres"></ul>
+        </div>
+        
+        <p class="colour" id="salida"></p> 
 
         <h3>No se me ocurre que tipo de pagina hacer de momento</h3>
         <p class="color">Esta web es responsive!!!</p>
