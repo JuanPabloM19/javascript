@@ -85,6 +85,8 @@
 //   return fecha;
 // }
 
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 // //Número máximo de casillas marcadas por cada fila
 // var maximo = 3;
 
@@ -111,50 +113,107 @@
 //   }
 // }
 
-var refranes=["El que la sigue la consigue","Mas vale prevenir que curar","Persona prevenida vale por dos","Quien todo lo quiere, todo lo pierde","No por mucho madrugar amanece mas temprano"];
-var indice=0;
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-setInterval(MuestraSiguienteRefran,2000);
+// var refranes=["El que la sigue la consigue","Mas vale prevenir que curar","Persona prevenida vale por dos","Quien todo lo quiere, todo lo pierde","No por mucho madrugar amanece mas temprano"];
+// var indice=0;
 
-function MuestraSiguienteRefran(){
-  indice++;
-  if(indice>refranes.length){indice=0;}
-  document.getElementById("salida").innerHTML=refranes[indice];
+// setInterval(MuestraSiguienteRefran,2000);
+
+// function MuestraSiguienteRefran(){
+//   indice++;
+//   if(indice>refranes.length){indice=0;}
+//   document.getElementById("salida").innerHTML=refranes[indice];
+// }
+
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// nombres = []
+ 
+// function insertarNombre(evt) {
+//     evt.preventDefault();
+ 
+//     let nombre = document.getElementById("nombre").value;
+ 
+//     if (nombre == "") {
+//         alert("El nombre no puede estar vacio");
+//     } else if(!existeNombre(nombre)) {
+//         let opcion = "<li> " + nombre + "</li>";
+ 
+//         let lista = document.getElementById("lista-nombres");
+ 
+//         lista.innerHTML += opcion;
+ 
+//         nombres.push(nombre);
+ 
+//         alert("Se ha insertado el nombre");
+//     }else{
+//         alert("Existe el nombre");
+//     }
+ 
+// }
+ 
+// function existeNombre(nombre){
+ 
+//     // Busco el nombre
+//     const nombreEncontrado = nombres.find(element => element.trim().toLowerCase() === nombre.trim().toLowerCase());
+ 
+//     if(nombreEncontrado){
+//         return true;
+//     }else{
+//         return false;
+//     }
+//   }
+
+
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+var n=prompt("Introduce los números que deseas que contenga el array");
+var array=[];
+down(n);
+function down(n)
+{
+	for (i=n; i>=1;i--){
+		array.push(i);
+	}
+	
+}
+document.write(array);
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function paisMayorLongitudCaracteres(paises) {
+    if (!Array.isArray(paises)) {
+        throw TypeError('El argumento paises debe ser un arreglo.');
+    }
+
+    if (!paises.every(e => typeof e == 'string')) {
+        throw TypeError('El arreglo paises debe contener únicamente cadenas de caracteres.');
+    }
+
+    return paises.reduce((a, p) => a.length > p.length ? a : p, '');
 }
 
-nombres = []
- 
-function insertarNombre(evt) {
-    evt.preventDefault();
- 
-    let nombre = document.getElementById("nombre").value;
- 
-    if (nombre == "") {
-        alert("El nombre no puede estar vacio");
-    } else if(!existeNombre(nombre)) {
-        let opcion = "<li> " + nombre + "</li>";
- 
-        let lista = document.getElementById("lista-nombres");
- 
-        lista.innerHTML += opcion;
- 
-        nombres.push(nombre);
- 
-        alert("Se ha insertado el nombre");
-    }else{
-        alert("Existe el nombre");
-    }
- 
+let paises = ['Colombia', 'Uruguay', 'Argentina', 'Alemania', 'Bolivia', 'Estados Unidos de América', 'Perú'];
+
+try {
+    console.log(paisMayorLongitudCaracteres(paises));   // Estados Unidos de América
+} catch (e) {
+    console.log(`Error: ${e.message}`);
 }
- 
-function existeNombre(nombre){
- 
-    // Busco el nombre
-    const nombreEncontrado = nombres.find(element => element.trim().toLowerCase() === nombre.trim().toLowerCase());
- 
-    if(nombreEncontrado){
-        return true;
-    }else{
-        return false;
-    }
-  }
+
+console.log();
+
+try {
+    console.log(paisMayorLongitudCaracteres(['Colombia', 42, 'Argentina', 'Alemania', 'Bolivia', 'Estados Unidos de América', 'Perú']));   // Error
+} catch (e) {
+    console.log(`Error: ${e.message}`);
+}
+
+console.log();
+
+try {
+    console.log(paisMayorLongitudCaracteres({a: 1000}));   // Error
+} catch (e) {
+    console.log(`Error: ${e.message}`);
+}
