@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <title>EShop</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <!--  Shopping cart table wrapper  -->
+      <div id="shopping-cart">
+        <div class="txt-heading">
+          <h1>Añade los productos que deseas comprar</h1>
+        </div>
+        <a onClick="emptyCart()" id="btnEmpty">Borrar productos</a>
+        <table class="tbl-cart" cellpadding="10" cellspacing="1">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th class="text-right" width="10%">Precio</th>
+              <th class="text-right" width="5%">Cantidad</th>
+              <th class="text-right" width="10%">Sub-Total</th>
+            </tr>
+          </thead>
+          <!--  Cart table to load data on "add to cart" action -->
+          <tbody id="cartTableBody"></tbody>
+          <tfoot>
+            <tr>
+              <td class="text-right">Total:</td>
+              <td id="itemCount" class="text-right" colspan="2"></td>
+              <td id="totalAmount" class="text-right"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <!-- Product gallery shell to load HTML from JavaScript code -->
+      <div id="product-grid">
+        <div class="txt-heading">
+          <h1>Productos</h1>
+        </div>
+        <div id="product-item-container"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="alert alert-info">
+        <p>Muestra de Calculo de Iva</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div clas="col-md-12">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div clsss="form-group">
+                <input
+                  type="text"
+                  name="monto"
+                  class="form-control"
+                  placeholder="Monto"
+                  onChange="calculo();"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div clsss="form-group">
+                <input
+                  type="text"
+                  name="iva"
+                  class="form-control"
+                  placeholder="IVA"
+                  readonly
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div clsss="form-group">
+                <input
+                  type="text"
+                  name="total"
+                  class="form-control"
+                  placeholder="Total"
+                  readonly
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="cart.js"></script>
+  </body>
+</html>
